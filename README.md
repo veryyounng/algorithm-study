@@ -15,10 +15,12 @@
 
 ## 📂 폴더 구조 예시
 
+```bash
 📦 ALGORITHM-STUDY
-┣ 📂BJ
-┃ ┣ 📂week1
-┃ ┃ ┣ 📂soyoung
-┃ ┃ ┃ ┣ 📜1325.py ← 문제 번호 기반 파일명
+ ┣ 📂BJ
+ ┃ ┣ 📂week1
+ ┃ ┃ ┣ 📂soyoung
+ ┃ ┃ ┃ ┣ 📜1325.py       ← 문제 번호 기반 파일명
+
 
 > ※ `BJ` = 백준(BOJ), `week1` = 1주차, `soyoung` = 참여자 이름
