@@ -25,5 +25,7 @@
 
 > ※ `BJ` = 백준(BOJ), `week1` = 1주차, `soyoung` = 참여자 이름
 
-## 최소영 블로그 링크
+```
+
+### 🔗 최소영 블로그 링크
 https://blog.naver.com/ekdcksthdud
