@@ -28,4 +28,4 @@
 ```
 
 ### 🔗 최소영 블로그 링크
-https://blog.naver.com/ekdcksthdud
+https://tuesday04.tistory.com/
