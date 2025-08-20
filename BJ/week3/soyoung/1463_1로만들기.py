@@ -1,15 +1,13 @@
-n = int(input())
+x = int(input())
 
-dp = [0] * (n+1)
+dp = [0] * (x+1)
 
-for x in range(2, n+1):
-    best = dp[x-1]+1
+for i in range(2, x+1):
+    dp[i] = dp[i-1] + 1
     
-    if x % 2 == 0:
-        best = min(dp[x//2]+1, best)
+    if i % 2 == 0:
+        dp[i] = min(dp[i//2]+1, dp[i])
+    if i % 3 == 0:
+        dp[i] = min(dp[i//3]+1, dp[i])
         
-    if x % 3 == 0:
-        best = min(dp[x//3]+1, best)
-        
-    dp[x] = best
-print(best)
+print(dp[x])
