@@ -1,0 +1,36 @@
+T = int(input())
+area = []
+
+for _ in range(T):
+    arr = input().strip()
+    
+    x = y = 0
+    d = 0
+    
+    min_x = max_x = 0
+    min_y = max_y = 0
+
+    dis = [(0,1),(1,0),(0,-1),(-1,0)]
+    
+    for c in arr:
+        if c == 'L':
+            d = (d+3) % 4
+        elif c == 'R':
+            d = (d+1) % 4
+        else:
+            dx, dy = dis[d]
+            if c == 'F':
+                x += dx
+                y += dy
+            elif c == 'B':
+                x -= dx
+                y -= dy
+                
+            if x < min_x: min_x = x
+            if x > max_x: max_x = x
+            if y < max_y: max_y = y
+            if y > max_y: max_y = y
+        
+    area.append((max_x - min_x) * (max_y-min_y))
+    
+print(*area, sep="\n")
