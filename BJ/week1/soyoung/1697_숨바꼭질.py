@@ -1,20 +1,22 @@
 from collections import deque
-
 n, k = map(int, input().split())
+
+maxi = 200000
+dis = [-1] * (maxi)
 
 queue = deque()
 queue.append(n)
-max = 100001
-visited = [0] * (max)
+dis[n] = 0
 
-def BFS(v):
+def BFS():
     while queue:
-        v = queue.popleft()
-        if v == k:
-            return visited[v]
-        for next in (v-1, v+1, v*2):
-            if next >=0 and next < max and visited[next] == 0:
-                visited[next] = visited[v] + 1
-                queue.append(next)
+        x = queue.popleft()
+        if x == k:
+            return dis[x]
+    
+        for nxt in (x-1, x+1, 2*x):
+            if 0 <= nxt < maxi and dis[nxt] == -1:
+                dis[nxt] = dis[x] + 1
+                queue.append(nxt)
 
-print(BFS(n))
+print(BFS())
