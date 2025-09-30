@@ -1,28 +1,28 @@
 from collections import deque
+
 n, k = map(int, input().split())
+maxi = 100000
 
-queue = deque()
-queue.append(n)
-maxi = 2000000
-visited = [-1] * (maxi)
-visited[n] = 0
+dis = [-1] * (maxi + 1)
+dis[n] = 0
 
-def BFS(x):
+def BFS():
+    queue = deque()
+    queue.append(n)
+    
     while queue:
         x = queue.popleft()
-        if x == k:
-            return visited[x]
         
-        for nxt in (2*x, x+1, x-1):
-            if 0 <= nxt < maxi and visited[nxt] == -1:
+        if x == k:
+            return dis[x]
+        
+        for nxt in (x-1, x+1, 2*x):
+            if 0 <= nxt <= maxi and dis[nxt] == -1:
                 if nxt == 2*x:
-                    visited[nxt] = visited[x]
+                    dis[nxt] = dis[x]
                     queue.appendleft(nxt)
+                    
                 else:
-                    visited[nxt] = visited[x] + 1
+                    dis[nxt] = dis[x] + 1
                     queue.append(nxt)
-
-    return -1
-
-print(BFS(n))
-    
+print(BFS())
